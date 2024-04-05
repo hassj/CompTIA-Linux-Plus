@@ -1,0 +1,84 @@
+Now one way we can look at our file metadata,
+as we've seen, is with the ls and -l listing,
+our long listing,
+but there are alternative ways of looking at this.
+The first thing that we're going to see here
+is creating a new and empty file.
+The file1 file doesn't exist.
+The touch command will create a new file.
+To look at the metadata and seeing it
+in a more detailed view, we can use the stat command.
+When I take a look at the stat command,
+we'll see a lot of information,
+but I can pull out different elements
+of that information. So I can go through
+and take a look at the last accessed time,
+I can look at the last modified time,
+and I can look at the last changed time.
+There are other keys that I can use to extract
+other information as well, but to understand what we mean
+by these different timestamps,
+we can go through and take a look at the table below
+where the access time is when the file was last read,
+the modified is when the file data,
+the actual contents of the file, was last changed,
+and when we look at the last change time
+is when the metadata was last changed,
+but we will see that the metadata changes often.
+If I read a file, well, it changes the metadata.
+We have to change the last access time.
+If I modify a file,
+well, the last change time still has to be modified
+because I've gone through
+and changed the metadata relating to the file.
+So our main times to look at
+is our access and modified times.
+We will see that if I change the permissions
+of a file that is only changing the metadata,
+and in which case we will see the last change time
+can change independently
+to the accessed or modified time.
+If we want to take a look a little bit more
+on the touch command, rather than just creating new
+and empty files,
+if I touch file1 when it exists,
+we'll see that it changes both the last access time
+and the last modified time.
+As I say, the last change time will always update
+if the metadata is changed.
+Using touch -a, we're only changing the access time,
+but again, be aware the last change time
+will also be modified.
+Using touch -m, we can then go through
+and change the last modified time.
+So if we need to change the timestamps on a file,
+but nothing else, we may well be able to do it
+using the touch command.
+Now when we're looking at some of our file management tools,
+we have got the cp command that can be used to copy a file,
+make a new copy of it.
+Here we're copying file1 through to file2,
+but it could quite easily be copying file
+from directory1 through to directory2,
+but we're making a copy of the file.
+In doing so, it is a new file, and it will have new
+metadata. If I use the mv command, mv for move,
+which could also be used for renaming a file,
+we're not making a copy,
+we are moving the original file so it maintains
+or will always maintain the metadata.
+If we want copy to maintain our metadata,
+we've got cp -a,
+our archive mode for copy. And using then copy -a
+file1 through to file3,
+we will see that we will have the same metadata,
+especially when we look at our timestamps on file3
+as we do with file1.
+a is really a shortcut in itself,
+and it's equal to -d, so read symbolic links,
+R for recursive, and preserve all metadata.
+Now we can get so much from our slides, but only so much.
+Our learning, as we've said before,
+is going to become from doing,
+so let's go through and see
+if we can find a command line and get some of this working.

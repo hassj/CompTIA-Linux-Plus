@@ -1,0 +1,137 @@
+We're gonna take a look
+at something that's probably a little bit misunderstood
+by its name.
+We're gonna take a look at understanding zombie processes.
+Now, zombie process is quite normal within Linux
+but they should not be long-lived.
+A parent process will start any child process as necessary.
+When the child process is then completed,
+the child becomes a zombie,
+and it's up to the parent to clean up
+our children that have become Zombies.
+When we go through and add in our compiler tools,
+we're gonna look at creating our own little c program.
+So we can go through and do an apt install,
+minus y, build-essential.
+This is gonna give me the tools that I need
+to create my own c programs,
+and we can go through and take a look at the zombie.c
+the c source file that we are creating.
+Now, we can download this
+from the exercise files part of the Plural Site website
+and I'm gonna be just pasting it in.
+The main part, though, is we start up a child process.
+So we fork our child process.
+If that child process is running,
+we then sleep for five minutes.
+Whilst we are sleeping,
+the child will end and we'll become a zombie process.
+So we'll be able to see that zombie process living
+for about five minutes before it's cleaned up
+by the parent closing down.
+Let's say this is just a normal process.
+There's nothing really going wrong,
+other than the parent sleeping
+whilst the child becomes a zombie.
+When we look at monitoring our zombies,
+we can go through then
+and run our gcc to compile our c source code.
+Our output is gonna be the zombie program.
+We can then go through and execute it in the background.
+As we execute it in the background,
+we're able to fire up then our ps command,
+and as we grep for the single word, zed,
+we'll be able to see the existing zombie processes.
+And I say this is quite normal.
+What has happened is the parents been asleep
+and the child had turned into a zombie.
+And to be honest, I'm sure we've all done that.
+Had a little nap in the afternoon, woken up to
+find our house full of zombies.
+If we go through and look at with the top command
+we can also run it in a batch process.
+So we are only looking at capturing information.
+We do one iteration and only looking
+for processes for our user account.
+We'll be able to see then the zombie processes
+running on the system and we'll be able to see
+our process being lifted.
+So come on, why don't we move out to the command line
+and create ourselves a few zombies?
+So we'll be creating our source code,
+compiling and linking the program with gcc,
+and then executing, and it's that execution
+that is gonna be creating our zombies.
+We can monitor it then either with the ps command
+or go through and take a look through top.
+And here we are.
+This looks like a glorious playground
+to create ourselves some zombies.
+So come on, let's go through and do it,
+using whichever text editing you want.
+I'm gonna create my c source file.
+So zombie.c.
+I can go into insert,
+and I'm just going to cheat a little
+and paste the information in.
+But as I say, this file is downloadable
+from the exercise files part
+of our Plural Sight website.
+Once we've got this saved, let's go through and save it.
+We can go through and compile it, but to compile it,
+we're gonna need to add in the build essential package.
+So I'm gonna do a sudo and apt install
+minus y and then build-essential.
+And it's singular.
+So this is then putting on our compiler
+as well as other library files that we are going to need.
+But once we've got this installed,
+we're able to create our own little c program.
+So you may have this on your own systems or you may not,
+but it doesn't take that long to go through and install.
+Once it has installed, we're able to run, then,
+our compiler, which will both compile and link
+to the libraries that we've referenced.
+We can specify that we want to use
+our zombie.c and our output file, so -o.
+We just can call the program zombie as well.
+So that's given me my program,
+and I can then go through and execute it.
+If I go through and execute it and throw it
+in the background, we know it's gonna be running
+for five minutes because we've got that wait period,
+that sleep period of 300 seconds.
+As we then go through and execute it,
+we can go and do through and do a ps -elf.
+So we can look at all zombies that we've got.
+We're looking at all of our processes.
+If we send our output to grep,
+and look for a complete word,
+and look just for the string zed,
+that's gonna be our status.
+We can then see that we've got then our zombie process.
+We're also able to see it from the point of view of top.
+And to limit the information that we see
+we can put it into batch mode
+where we can do then one iteration
+and we can look for just the user $USER.
+If I move this to the top and hit enter
+then we can see we go into it and then jump straight out.
+Looking at the tasks,
+we've got 112 tasks in total,
+but out of that total we have then one zombie process.
+We can see we've got two commands running with the zombie.
+We've got our parent process and then our child process.
+We can see the child process has stopped running.
+It's not taking any resources,
+but it's in that zombie state now.
+Now, it will tidy itself up.
+Once the parent process shuts down,
+the child processes will be automatically tidied up.
+If you are seeing zombie processes, though,
+on your system, it's usually an indication
+of a badly written program and it's trying to work out,
+such as with this top command
+where we can see the zombie processes,
+which commands are creating the zombie processes,
+and having a word with the developers.

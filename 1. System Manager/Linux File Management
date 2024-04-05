@@ -1,0 +1,59 @@
+Hello and welcome to this course from Pluralsight.
+My name is Andrew Mallett
+and I'm gonna be your instructor as I guide you
+through this complete course where we go through
+and take a look at CompTIA Linux+ System Management.
+Now, in this module, we're gonna be taking a look
+and concentrating on managing Linux files.
+Now, as we go through and take a look,
+the whole course is gonna help you get up and running
+with Linux System administration, as well as DevOps Skills.
+We're gonna be working with different Linux distributions
+so you are not just learning one Linux system.
+We'll be working with Alma Linux 8.5
+which is a Red Hat 8 rebuild.
+We'll be looking at openSUSE 15.2 as well as Ubuntu 20.04.
+Within this particular module,
+we're gonna be taking a look at managing directories,
+understanding file metadata, editing files,
+and copying files both locally and remotely.
+Along with that, we'll be taking a quick look
+at creating SSH Git repos,
+but we'll see far more on Git later on,
+as we look at scripting in another course.
+Now, one of the important things
+about CompTIA certification
+is getting the idea of your learning Linux,
+rather than particularly learning
+one particular distribution.
+The recommended systems to work on are,
+as we are working on in our lab,
+Alma Linux, Ubuntu, and openSUSE.
+Now for the demonstrations,
+we are working with Vagrant and VirtualBox.
+Now, if you can install VirtualBox
+and Vagrant on your system, both are free
+and available across pretty much all platforms,
+you're gonna be able to make use of our Vagrant file
+that could easily then build your virtual machines for you.
+To get into the main heart of this module though,
+we're gonna be taking a look at working at our command line.
+Now, of course
+there are some very simple things that we can do.
+So of course, printing our working directory,
+moving to a directory using the cd command.
+But once we've done that,
+we actually populate a variable called OLDPWD,
+so we can check the content of that,
+and that will be pointing through to our home directory,
+if that's where we started.
+Now that means then we can actually cd to that variable
+or as a shortcut, cd space minus.
+Now of course, looking at this,
+this just introduces a couple of commands.
+The pwd, the cd command, the echo command,
+and the use of a variable or a shortcut.
+Your real skill is by getting good hands-on experience
+through the demonstrations at the command line.
+So come on, let's go through
+and find ourselves a command line environment to work with.
