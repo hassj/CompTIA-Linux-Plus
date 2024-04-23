@@ -16,8 +16,10 @@ Explaination:
 > 
 > Column 5: group ownership
 >
-> Column 6: file size in bytes>
+> Column 6: file size in bytes
+>
 > Column 7: last modified time 
+>
 > column 8: file name itself
 
 Note: FHS = consistency
@@ -48,6 +50,7 @@ Note
 `touch file_naem`
 
 `touch -a file_name`	// changes access time
+
 `touch -m file_name`	// changes modify time
 
 - Copy file with preserve permison, ownership and timestamps with --archive mode
